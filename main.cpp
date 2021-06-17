@@ -4,5 +4,5 @@
 int main() {
   auto cwd = std::filesystem::current_path();
   printf("%s", cwd.c_str());
-  return EXIT_SUCCESS;
+   return EXIT_SUCCESS;
 }
