@@ -188,10 +188,7 @@ set(CXX_FILESYSTEM_HAVE_FS ${_have_fs} CACHE BOOL "TRUE if we have the C++ files
 set(CXX_FILESYSTEM_HEADER ${_fs_header} CACHE STRING "The header that should be included to obtain the filesystem APIs")
 set(CXX_FILESYSTEM_NAMESPACE ${_fs_namespace} CACHE STRING "The C++ namespace that contains the filesystem APIs")
 set(CXX_FILESYSTEM_IS_EXPERIMENTAL ${_is_experimental} CACHE BOOL "TRUE if the C++ filesystem library is the experimental version")
-message(${CXX_FILESYSTEM_HAVE_FS})
-message(${CXX_FILESYSTEM_HEADER})
-message(${CXX_FILESYSTEM_NAMESPACE})
-message(${CXX_FILESYSTEM_IS_EXPERIMENTAL})
+
 set(_found FALSE)
 
 if(CXX_FILESYSTEM_HAVE_FS)
@@ -244,8 +241,7 @@ endif()
 cmake_pop_check_state()
 
 set(Filesystem_FOUND ${_found} CACHE BOOL "TRUE if we can run a program using std::filesystem" FORCE)
-message(${Filesystem_FIND_REQUIRED})
-message(${Filesystem_FOUND})
+
 if(Filesystem_FIND_REQUIRED AND NOT Filesystem_FOUND)
-    message(FATAL_ERROR "Cannot run a simple program using std::filesystem\nYou need to update your C++ compiler to use this library")
+    message(FATAL_ERROR "Cannot run simple program using std::filesystem")
 endif()
